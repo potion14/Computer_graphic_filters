@@ -1,0 +1,67 @@
+﻿<Window x:Class="Grafika4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafika4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="1200">
+    <Grid Background="LightSlateGray" Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" Margin="5" Background="Gray">
+            <StackPanel>
+                <Button Margin="10 5 10 5" Click="Load_image">Wczytaj obrazek</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Odcienie_szarosci">Odcienie szarosci</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Odcienie_szarosci2">Odcienie szrosci 2</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Filtr_wygladzajacy">Filtr wygładzający</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Filtr_medianowy">Filtr medianowy</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Wykrywanie_krawedzi">Wykrywanie krawedzi</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Filtr_wyostrzajacy">Filtr wyostrzający</Button>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Filtr_Gausa">Filtr Gausa</Button>
+                <Separator Margin="5"></Separator>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Width="15" Height="15" Margin="0" HorizontalAlignment="Center" Name="RTest" Grid.Row="0" Grid.Column="0" Background="Red"></Border>
+                    <Border Width="15" Height="15" Margin="0" HorizontalAlignment="Center" Name="GTest" Grid.Row="1" Grid.Column="0" Background="Green"></Border>
+                    <Border Width="15" Height="15" Margin="0" HorizontalAlignment="Center" Name="BTest" Grid.Row="2" Grid.Column="0" Background="Blue"></Border>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" Name="Red_TextBox"></TextBox>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" Name="Green_TextBox"></TextBox>
+                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3" Name="Blue_TextBox"></TextBox>
+                    <Button Margin="3" Grid.Column="2" Grid.Row="0" Click="Button_Red_Add">+</Button>
+                    <Button Margin="3" Grid.Column="3" Grid.Row="0" Click="Button_Substract">-</Button>
+                    <Button Margin="3" Grid.Column="4" Grid.Row="0" Click="Button_Multipla">*</Button>
+                    <Button Margin="3" Grid.Column="5" Grid.Row="0" Click="Button_Divide">/</Button>
+                </Grid>
+                <Separator Margin="5"></Separator>
+                <Label Margin="5">Jasność</Label>
+                <Slider VerticalAlignment="Center" Name="SBrightness" Minimum="0" Maximum="200" IsSnapToTickEnabled="True" Value="100"
+                            ValueChanged="Brightness_Slider" LargeChange="10" SmallChange="1" Margin="5"></Slider>
+                <Separator Margin="5"></Separator>
+                <Button Margin="10 5 10 5" Click="Load_original">Wczytaj oryginał</Button>
+            </StackPanel>
+        </Border>
+        <Image Grid.Column="1" Name="Image_placeholder" Margin="5" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+    </Grid>
+</Window>
